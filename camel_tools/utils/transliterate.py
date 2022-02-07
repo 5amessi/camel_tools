@@ -32,7 +32,7 @@ from collections import deque
 import re
 import six
 
-from camel_tools.utils.charmap import CharMapper
+from rasa_nlu.camel_tools.utils.charmap import CharMapper
 
 
 _WHITESPACE_RE = re.compile(r'\s')
@@ -40,13 +40,13 @@ _WHITESPACE_RE = re.compile(r'\s')
 
 class Transliterator(object):
     """A class for transliterating text using a
-    :obj:`~camel_tools.utils.charmap.CharMapper`. This class adds the extra
+    :obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper`. This class adds the extra
     utility of marking individual tokens to not be transliterated. It assumes
     that tokens are whitespace seperated.
 
     Args:
-        mapper (:obj:`~camel_tools.utils.charmap.CharMapper`): The
-            :obj:`~camel_tools.utils.charmap.CharMapper` instance to be used
+        mapper (:obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper`): The
+            :obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper` instance to be used
             for transliteration.
         marker (:obj:`str`, optional): A string that is prefixed to all
             tokens that shouldn't be transliterated. Should not contain any
@@ -54,7 +54,7 @@ class Transliterator(object):
 
     Raises:
         :obj:`TypeError`: If mapper is not a
-            :obj:`~camel_tools.utils.charmap.CharMapper` instance or marker is
+            :obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper` instance or marker is
             not a string.
         :obj:`ValueError`: If marker contains whitespace or is an empty string.
     """
@@ -91,7 +91,7 @@ class Transliterator(object):
             ignore_markers (:obj:`bool`, optional): If set to `True`, all text,
                 including marked tokens are transliterated as well excluding
                 the markers. If you would like to transliterate the markers as
-                well, use :obj:`~camel_tools.utils.charmap.CharMapper`
+                well, use :obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper`
                 directly instead. Defaults to `False`.
 
         Returns:

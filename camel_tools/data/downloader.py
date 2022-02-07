@@ -32,7 +32,7 @@ from os.path import dirname, exists
 import warnings
 import zipfile
 
-from camel_tools.data import CT_DATA_DIR
+from rasa_nlu.camel_tools.data import CT_DATA_DIR
 
 
 _STREAM_CHUNK_SIZE = 32768

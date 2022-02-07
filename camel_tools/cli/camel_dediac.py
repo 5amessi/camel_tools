@@ -61,10 +61,10 @@ import sys
 
 from docopt import docopt
 
-import camel_tools as camelt
-from camel_tools.utils.dediac import dediac_ar, dediac_bw, dediac_safebw
-from camel_tools.utils.dediac import dediac_xmlbw, dediac_hsb
-from camel_tools.cli.utils import open_files
+import rasa_nlu.camel_tools as camelt
+from rasa_nlu.camel_tools.utils.dediac import dediac_ar, dediac_bw, dediac_safebw
+from rasa_nlu.camel_tools.utils.dediac import dediac_xmlbw, dediac_hsb
+from rasa_nlu.camel_tools.cli.utils import open_files
 
 
 __version__ = camelt.__version__

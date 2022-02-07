@@ -31,11 +31,11 @@ from collections import namedtuple
 from pathlib import Path
 import re
 
-from camel_tools.utils.stringutils import force_unicode
-from camel_tools.morphology.utils import strip_lex
-from camel_tools.morphology.errors import InvalidDatabaseFlagError
-from camel_tools.morphology.errors import DatabaseParseError
-from camel_tools.data import DataCatalogue
+from rasa_nlu.camel_tools.utils.stringutils import force_unicode
+from rasa_nlu.camel_tools.morphology.utils import strip_lex
+from rasa_nlu.camel_tools.morphology.errors import InvalidDatabaseFlagError
+from rasa_nlu.camel_tools.morphology.errors import DatabaseParseError
+from rasa_nlu.camel_tools.data import DataCatalogue
 
 
 MorphologyDBFlags = namedtuple('MorphologyDBFlags', ['analysis', 'generation',
@@ -55,7 +55,7 @@ class MorphologyDB:
             Defaults to 'a'.
 
     Raises:
-        :obj:`~camel_tools.morphology.errors.InvalidDatabaseFlagError`: When
+        :obj:`~rasa_nlu.camel_tools.morphology.errors.InvalidDatabaseFlagError`: When
             an invalid flag value is given.
     """
 
@@ -64,7 +64,7 @@ class MorphologyDB:
         """Returns a list of builtin databases provided with CAMeL Tools.
 
         Returns:
-            :obj:`list` of :obj:`~camel_tools.data.DatasetInfo`: List of
+            :obj:`list` of :obj:`~rasa_nlu.camel_tools.data.DatasetInfo`: List of
             builtin databases.
         """
 

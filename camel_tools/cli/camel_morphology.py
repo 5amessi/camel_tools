@@ -74,15 +74,15 @@ import re
 from docopt import docopt
 import six
 
-import camel_tools as camelt
-from camel_tools.utils.charsets import AR_DIAC_CHARSET
-from camel_tools.utils.stringutils import force_unicode, force_encoding
-from camel_tools.morphology.database import MorphologyDB
-from camel_tools.morphology.analyzer import Analyzer
-from camel_tools.morphology.generator import Generator
-from camel_tools.morphology.reinflector import Reinflector
-from camel_tools.morphology.errors import DatabaseError, AnalyzerError
-from camel_tools.morphology.errors import GeneratorError, MorphologyError
+import rasa_nlu.camel_tools as camelt
+from rasa_nlu.camel_tools.utils.charsets import AR_DIAC_CHARSET
+from rasa_nlu.camel_tools.utils.stringutils import force_unicode, force_encoding
+from rasa_nlu.camel_tools.morphology.database import MorphologyDB
+from rasa_nlu.camel_tools.morphology.analyzer import Analyzer
+from rasa_nlu.camel_tools.morphology.generator import Generator
+from rasa_nlu.camel_tools.morphology.reinflector import Reinflector
+from rasa_nlu.camel_tools.morphology.errors import DatabaseError, AnalyzerError
+from rasa_nlu.camel_tools.morphology.errors import GeneratorError, MorphologyError
 
 
 __version__ = camelt.__version__

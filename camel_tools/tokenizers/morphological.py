@@ -29,7 +29,7 @@
 
 import re
 from collections import deque
-from camel_tools.utils.dediac import dediac_ar
+from rasa_nlu.camel_tools.utils.dediac import dediac_ar
 
 
 # Reduce consequitive '+'s to one
@@ -59,11 +59,11 @@ class MorphologicalTokenizer(object):
     """Class for morphologically tokenizing Arabic words.
 
     Args:
-        disambiguator (:obj:`~camel_tools.disambig.common.Disambiguator`): The
+        disambiguator (:obj:`~rasa_nlu.camel_tools.disambig.common.Disambiguator`): The
             disambiguator to use for tokenization.
         scheme (:obj:`str`): The tokenization scheme to use.
             You can use the
-            :meth:`~camel_tools.disambig.common.Disambiguator.tok_feats`
+            :meth:`~rasa_nlu.camel_tools.disambig.common.Disambiguator.tok_feats`
             method of your chosen disambiguator to get a list of tokenization
             schemes it produces.
         split (:obj:`bool`, optional): If set to True, then morphological

@@ -60,14 +60,14 @@ import sys
 
 from docopt import docopt
 
-import camel_tools
-from camel_tools.tokenizers.word import simple_word_tokenize
-from camel_tools.cli.utils import open_files
+import rasa_nlu.camel_tools
+from rasa_nlu.camel_tools.tokenizers.word import simple_word_tokenize
+from rasa_nlu.camel_tools.cli.utils import open_files
 
-from camel_tools.cli.utils import open_files
+from rasa_nlu.camel_tools.cli.utils import open_files
 
 
-__version__ = camel_tools.__version__
+__version__ = rasa_nlu.camel_tools.__version__
 
 
 _TOKENIZERS = [

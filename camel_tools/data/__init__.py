@@ -53,9 +53,9 @@ def _get_appdatadir():
 
     # TODO: Make sure this works with OSs other than Windows, Linux and Mac.
     if sys.platform == 'win32':
-        return Path(home, 'AppData/Roaming/camel_tools')
+        return Path(home, 'AppData/Roaming/rasa_nlu.camel_tools')
     else:
-        return Path(home, '.camel_tools')
+        return Path(home, '.rasa_nlu.camel_tools')
 
 
 CT_DATA_PATH_DEFAULT = _get_appdatadir()
@@ -65,12 +65,11 @@ CT_DATA_DIR = CT_DATA_PATH_DEFAULT
 _CATALOGUE_PATH = Path(__file__).parent / 'catalogue.json'
 with _CATALOGUE_PATH.open('r', encoding='utf-8') as cat_fp:
     _CATALOGUE = json.load(cat_fp)
-
+os.environ['CAMELTOOLS_DATA']=''
 if os.environ.get('CAMELTOOLS_DATA') is not None:
     CT_DATA_DIR = Path(
         os.environ.get('CAMELTOOLS_DATA')).expanduser().absolute()
-
-_CT_DATASET_PATH = Path(CT_DATA_DIR, 'data')
+_CT_DATASET_PATH = Path(CT_DATA_DIR, 'camel_tools_data/data')
 
 
 _DownloadInfo = namedtuple('DownloadInfo', ['name',

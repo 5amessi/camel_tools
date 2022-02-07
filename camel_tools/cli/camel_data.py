@@ -46,12 +46,11 @@ import sys
 
 from docopt import docopt
 
-import camel_tools
-from camel_tools.data import DataCatalogue, CT_DATA_DIR
-from camel_tools.data.downloader import DataDownloader, DownloaderError
+from rasa_nlu.camel_tools.data import DataCatalogue, CT_DATA_DIR
+from rasa_nlu.camel_tools.data.downloader import DataDownloader, DownloaderError
 
 
-__version__ = camel_tools.__version__
+__version__ = rasa_nlu.camel_tools.__version__
 
 
 def main():  # pragma: no cover

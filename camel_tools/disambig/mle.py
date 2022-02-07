@@ -32,13 +32,13 @@ import json
 from cachetools import LFUCache, cached
 import editdistance
 
-from camel_tools.utils.dediac import dediac_ar
-from camel_tools.disambig.common import Disambiguator, DisambiguatedWord
-from camel_tools.disambig.common import ScoredAnalysis
-from camel_tools.morphology.database import MorphologyDB
-from camel_tools.morphology.analyzer import Analyzer
-from camel_tools.morphology.utils import strip_lex
-from camel_tools.data import DataCatalogue
+from rasa_nlu.camel_tools.utils.dediac import dediac_ar
+from rasa_nlu.camel_tools.disambig.common import Disambiguator, DisambiguatedWord
+from rasa_nlu.camel_tools.disambig.common import ScoredAnalysis
+from rasa_nlu.camel_tools.morphology.database import MorphologyDB
+from rasa_nlu.camel_tools.morphology.analyzer import Analyzer
+from rasa_nlu.camel_tools.morphology.utils import strip_lex
+from rasa_nlu.camel_tools.data import DataCatalogue
 
 
 def _calima_msa_r13_analyzer():
@@ -95,7 +95,7 @@ class MLEDisambiguator(Disambiguator):
     disambiguate words based on the pos-lex log probabilities of their analyses.
 
     Args:
-        analyzer (:obj:`~camel_tools.morphology.analyzer.Analyzer`):
+        analyzer (:obj:`~rasa_nlu.camel_tools.morphology.analyzer.Analyzer`):
             Disambiguator to use if a word is not in the word-based MLE model.
             The analyzer should provide the pos-lex log probabilities for
             analyses to disambiguate analyses.
@@ -165,7 +165,6 @@ class MLEDisambiguator(Disambiguator):
 
         model_info = DataCatalogue.get_dataset_info('DisambigMLE', model_name)
         mle_path = model_info.path / 'model.json'
-
         if analyzer is None:
             analyzer = _MLE_ANALYZER_MAP[model_info.name]()
 
@@ -226,7 +225,7 @@ class MLEDisambiguator(Disambiguator):
                 disambiguate.
 
         Returns:
-            :obj:`~camel_tools.disambig.common.DisambiguatedWord`: The
+            :obj:`~rasa_nlu.camel_tools.disambig.common.DisambiguatedWord`: The
             disambiguation of the word token in `sentence` at `word_ndx`.
         """
 
@@ -241,7 +240,7 @@ class MLEDisambiguator(Disambiguator):
                 sentence.
 
         Returns:
-            :obj:`list` of :obj:`~camel_tools.disambig.common.DisambiguatedWord`:
+            :obj:`list` of :obj:`~rasa_nlu.camel_tools.disambig.common.DisambiguatedWord`:
             The list of disambiguations for each word in the given sentence.
         """
 

@@ -30,25 +30,25 @@ from __future__ import absolute_import
 import copy
 import collections
 
-from camel_tools.morphology.database import MorphologyDB
-from camel_tools.morphology.errors import GeneratorError
-from camel_tools.morphology.errors import InvalidGeneratorFeature
-from camel_tools.morphology.errors import InvalidGeneratorFeatureValue
-from camel_tools.morphology.utils import merge_features, strip_lex
+from rasa_nlu.camel_tools.morphology.database import MorphologyDB
+from rasa_nlu.camel_tools.morphology.errors import GeneratorError
+from rasa_nlu.camel_tools.morphology.errors import InvalidGeneratorFeature
+from rasa_nlu.camel_tools.morphology.errors import InvalidGeneratorFeatureValue
+from rasa_nlu.camel_tools.morphology.utils import merge_features, strip_lex
 
 
 class Generator(object):
     """Morphological generator component.
 
     Args:
-        db (:obj:`~camel_tools.morphology.database.MorphologyDB`): Database to
+        db (:obj:`~rasa_nlu.camel_tools.morphology.database.MorphologyDB`): Database to
             use for generation. Must be opened in generation or reinflection
             mode.
 
     Raises:
-        :obj:`~camel_tools.morphology.errors.GeneratorError`: If **db** is not
+        :obj:`~rasa_nlu.camel_tools.morphology.errors.GeneratorError`: If **db** is not
             an instance of
-            :obj:`~camel_tools.morphology.database.MorphologyDB` or if **db**
+            :obj:`~rasa_nlu.camel_tools.morphology.database.MorphologyDB` or if **db**
             does not support generation.
     """
 
@@ -78,9 +78,9 @@ class Generator(object):
             information on features and their values.
 
         Raises:
-            :obj:`~camel_tools.morphology.errors.InvalidGeneratorFeature`: If
+            :obj:`~rasa_nlu.camel_tools.morphology.errors.InvalidGeneratorFeature`: If
                 a feature is given that is not defined in database.
-            :obj:`~camel_tools.morphology.errors.InvalidGeneratorFeatureValue`:
+            :obj:`~rasa_nlu.camel_tools.morphology.errors.InvalidGeneratorFeatureValue`:
                 If an invalid value is given to a feature or if 'pos' feature
                 is not defined.
         """
