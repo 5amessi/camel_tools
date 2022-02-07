@@ -52,7 +52,7 @@ class DisambiguatedWord(namedtuple('DisambiguatedWord', ['word', 'analyses'])):
         word (:obj:`str`): The word being disambiguated.
 
         analyses (:obj:`list` of \
-        :obj:`~rasa_nlu.camel_tools.disambig.common.ScoredAnalysis`): List of scored
+        :obj:`~camel_tools.disambig.common.ScoredAnalysis`): List of scored
             analyses sorted from highest to lowest disambiguation score.
     """
 
@@ -73,7 +73,7 @@ class Disambiguator(ABC):
                 Defaults to 1.
 
         Returns:
-        :obj:`list` of :obj:`~rasa_nlu.camel_tools.disambig.common.DisambiguatedWord`:
+        :obj:`list` of :obj:`~camel_tools.disambig.common.DisambiguatedWord`:
         List of disambiguted words in **sentence**.
         """
 
@@ -93,7 +93,7 @@ class Disambiguator(ABC):
                 Defaults to 1.
 
         Returns:
-        :obj:`~rasa_nlu.camel_tools.disambig.common.DisambiguatedWord`: The
+        :obj:`~camel_tools.disambig.common.DisambiguatedWord`: The
         disambiguated word at index **word_ndx** in **sentence**.
         """
 

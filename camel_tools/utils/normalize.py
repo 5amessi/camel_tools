@@ -30,7 +30,7 @@
 import re
 import unicodedata
 
-from rasa_nlu.camel_tools.utils.charmap import CharMapper
+from camel_tools.utils.charmap import CharMapper
 
 
 _ALEF_NORMALIZE_BW_RE = re.compile(u'[<>{|]')

@@ -53,9 +53,9 @@ def _get_appdatadir():
 
     # TODO: Make sure this works with OSs other than Windows, Linux and Mac.
     if sys.platform == 'win32':
-        return Path(home, 'AppData/Roaming/rasa_nlu.camel_tools')
+        return Path(home, 'AppData/Roaming/camel_tools')
     else:
-        return Path(home, '.rasa_nlu.camel_tools')
+        return Path(home, '.camel_tools')
 
 
 CT_DATA_PATH_DEFAULT = _get_appdatadir()

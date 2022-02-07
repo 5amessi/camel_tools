@@ -62,10 +62,10 @@ import sys
 from docopt import docopt
 import six
 
-import rasa_nlu.camel_tools as camelt
-from rasa_nlu.camel_tools.utils.stringutils import force_encoding, force_unicode
-from rasa_nlu.camel_tools.utils.charmap import CharMapper
-from rasa_nlu.camel_tools.utils.transliterate import Transliterator
+import camel_tools as camelt
+from camel_tools.utils.stringutils import force_encoding, force_unicode
+from camel_tools.utils.charmap import CharMapper
+from camel_tools.utils.transliterate import Transliterator
 
 
 __version__ = camelt.__version__

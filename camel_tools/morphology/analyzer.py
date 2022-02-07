@@ -37,15 +37,15 @@ from threading import RLock
 
 from cachetools import LFUCache, cached
 
-from rasa_nlu.camel_tools.utils.charsets import UNICODE_PUNCT_SYMBOL_CHARSET
-from rasa_nlu.camel_tools.utils.charsets import AR_CHARSET, AR_DIAC_CHARSET
+from camel_tools.utils.charsets import UNICODE_PUNCT_SYMBOL_CHARSET
+from camel_tools.utils.charsets import AR_CHARSET, AR_DIAC_CHARSET
 
-from rasa_nlu.camel_tools.utils.charmap import CharMapper
-from rasa_nlu.camel_tools.morphology.database import MorphologyDB
-from rasa_nlu.camel_tools.morphology.errors import AnalyzerError
-from rasa_nlu.camel_tools.morphology.utils import merge_features
-from rasa_nlu.camel_tools.morphology.utils import simple_ar_to_caphi
-from rasa_nlu.camel_tools.utils.dediac import dediac_ar
+from camel_tools.utils.charmap import CharMapper
+from camel_tools.morphology.database import MorphologyDB
+from camel_tools.morphology.errors import AnalyzerError
+from camel_tools.morphology.utils import merge_features
+from camel_tools.morphology.utils import simple_ar_to_caphi
+from camel_tools.utils.dediac import dediac_ar
 
 
 _ALL_PUNC = u''.join(UNICODE_PUNCT_SYMBOL_CHARSET)
@@ -74,7 +74,7 @@ DEFAULT_NORMALIZE_MAP = CharMapper({
     u'\u0629': u'\u0647',
     u'\u0640': u''
 })
-""":obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper`: The default character map used
+""":obj:`~camel_tools.utils.charmap.CharMapper`: The default character map used
 for normalization by :obj:`Analyzer`.
 
 Removes the tatweel/kashida character and does the following conversions:
@@ -138,12 +138,12 @@ class Analyzer:
     """Morphological analyzer component.
 
     Args:
-        db (:obj:`~rasa_nlu.camel_tools.morphology.database.MorphologyDB`): Database to
+        db (:obj:`~camel_tools.morphology.database.MorphologyDB`): Database to
             use for analysis. Must be opened in analysis or reinflection mode.
         backoff (:obj:`str`, optional): Backoff mode. Can be one of the
             following: 'NONE', 'NOAN_ALL', 'NOAN_PROP', 'ADD_ALL', or
             'ADD_PROP'. Defaults to 'NONE'.
-        norm_map (:obj:`~rasa_nlu.camel_tools.utils.charmap.CharMapper`, optional):
+        norm_map (:obj:`~camel_tools.utils.charmap.CharMapper`, optional):
             Character map for normalizing input words. If set to None, then
             :const:`DEFAULT_NORMALIZE_MAP` is used.
             Defaults to None.
@@ -156,9 +156,9 @@ class Analyzer:
             frequent words, otherwise no analyses will be cached.
 
     Raises:
-        :obj:`~rasa_nlu.camel_tools.morphology.errors.AnalyzerError`: If database is
+        :obj:`~camel_tools.morphology.errors.AnalyzerError`: If database is
             not an instance of
-            (:obj:`~rasa_nlu.camel_tools.morphology.database.MorphologyDB`), if **db**
+            (:obj:`~camel_tools.morphology.database.MorphologyDB`), if **db**
             does not support analysis, or if **backoff** is not a valid backoff
             mode.
     """

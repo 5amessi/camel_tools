@@ -68,14 +68,14 @@ import sys
 
 from docopt import docopt
 
-import rasa_nlu.camel_tools
-from rasa_nlu.camel_tools.morphology.database import MorphologyDB
-from rasa_nlu.camel_tools.disambig.mle import MLEDisambiguator
-from rasa_nlu.camel_tools.tokenizers.word import simple_word_tokenize
-from rasa_nlu.camel_tools.cli.utils import open_files
+import camel_tools
+from camel_tools.morphology.database import MorphologyDB
+from camel_tools.disambig.mle import MLEDisambiguator
+from camel_tools.tokenizers.word import simple_word_tokenize
+from camel_tools.cli.utils import open_files
 
 
-__version__ = rasa_nlu.camel_tools.__version__
+__version__ = camel_tools.__version__
 
 _BUILTIN_DBS = MorphologyDB.list_builtin_dbs()
 _DEFAULT_DB = 'calima-msa-r13'

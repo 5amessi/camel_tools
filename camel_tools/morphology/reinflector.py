@@ -31,13 +31,13 @@ from collections import deque
 
 import re
 
-from rasa_nlu.camel_tools.morphology.database import MorphologyDB
-from rasa_nlu.camel_tools.morphology.analyzer import Analyzer
-from rasa_nlu.camel_tools.morphology.generator import Generator
-from rasa_nlu.camel_tools.morphology.errors import ReinflectorError
-from rasa_nlu.camel_tools.morphology.errors import InvalidReinflectorFeature
-from rasa_nlu.camel_tools.morphology.errors import InvalidReinflectorFeatureValue
-from rasa_nlu.camel_tools.utils.dediac import dediac_ar
+from camel_tools.morphology.database import MorphologyDB
+from camel_tools.morphology.analyzer import Analyzer
+from camel_tools.morphology.generator import Generator
+from camel_tools.morphology.errors import ReinflectorError
+from camel_tools.morphology.errors import InvalidReinflectorFeature
+from camel_tools.morphology.errors import InvalidReinflectorFeatureValue
+from camel_tools.utils.dediac import dediac_ar
 
 
 _CLITIC_FEATS = frozenset(['enc0', 'prc0', 'prc1', 'prc2', 'prc3'])
@@ -60,14 +60,14 @@ class Reinflector(object):
     """Morphological reinflector component.
 
     Arguments:
-        db (:obj:`~rasa_nlu.camel_tools.morphology.database.MorphologyDB`): Database to
+        db (:obj:`~camel_tools.morphology.database.MorphologyDB`): Database to
             use for generation. Must be opened in reinflection mode or both
             analysis and generation modes.
 
     Raises:
-        :obj:`~rasa_nlu.camel_tools.morphology.errors.ReinflectorError`: If **db** is
+        :obj:`~camel_tools.morphology.errors.ReinflectorError`: If **db** is
             not an instance of
-            :obj:`~rasa_nlu.camel_tools.morphology.database.MorphologyDB` or if **db**
+            :obj:`~camel_tools.morphology.database.MorphologyDB` or if **db**
             does not support reinflection.
     """
 
@@ -99,9 +99,9 @@ class Reinflector(object):
             information on features and their values.
 
         Raises:
-            :obj:`~rasa_nlu.camel_tools.morphology.errors.InvalidReinflectorFeature`:
+            :obj:`~camel_tools.morphology.errors.InvalidReinflectorFeature`:
                 If a feature is given that is not defined in database.
-            :obj:`~rasa_nlu.camel_tools.morphology.errors.InvalidReinflectorFeatureValue`:
+            :obj:`~camel_tools.morphology.errors.InvalidReinflectorFeatureValue`:
                 If an invalid value is given to a feature or if 'pos' feature
                 is not defined.
         """

@@ -29,8 +29,8 @@
 
 import re
 
-from rasa_nlu.camel_tools.utils.charsets import UNICODE_PUNCT_SYMBOL_CHARSET
-from rasa_nlu.camel_tools.utils.charsets import UNICODE_LETTER_MARK_NUMBER_CHARSET
+from camel_tools.utils.charsets import UNICODE_PUNCT_SYMBOL_CHARSET
+from camel_tools.utils.charsets import UNICODE_LETTER_MARK_NUMBER_CHARSET
 
 
 _ALL_PUNCT = u''.join(UNICODE_PUNCT_SYMBOL_CHARSET)

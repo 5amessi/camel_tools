@@ -31,9 +31,9 @@ from __future__ import absolute_import
 
 import re
 
-from rasa_nlu.camel_tools.utils.charsets import AR_DIAC_CHARSET, BW_DIAC_CHARSET
-from rasa_nlu.camel_tools.utils.charsets import SAFEBW_DIAC_CHARSET, XMLBW_DIAC_CHARSET
-from rasa_nlu.camel_tools.utils.charsets import HSB_DIAC_CHARSET
+from camel_tools.utils.charsets import AR_DIAC_CHARSET, BW_DIAC_CHARSET
+from camel_tools.utils.charsets import SAFEBW_DIAC_CHARSET, XMLBW_DIAC_CHARSET
+from camel_tools.utils.charsets import HSB_DIAC_CHARSET
 
 
 _DIAC_RE_BW = re.compile(u'[' +
